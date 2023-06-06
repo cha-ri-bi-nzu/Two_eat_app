@@ -1,4 +1,4 @@
-class TwoEatAppsController < ApplicationController
+class PostsController < ApplicationController
   def index
   end
 
@@ -19,5 +19,4 @@ class TwoEatAppsController < ApplicationController
 
   def destroy
   end
-
 end
