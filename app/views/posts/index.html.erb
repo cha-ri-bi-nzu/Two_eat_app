@@ -5,11 +5,12 @@
     <th>TwoEat</th>
   </tr>
 
-  <%= form_with(model: Post.new, local: true) do |form| %>
+  <% @posts.each do |post| %>
     <tr>
-      <tb><%= post.content %></tb>
+      <td><%= post.content %></td>
     </tr>
   <% end %>
 </table>
 
+<br>
 <%= link_to 'とぅぶやく', new_post_path %>
