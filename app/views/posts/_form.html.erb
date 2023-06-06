@@ -1,0 +1,10 @@
+<%= form_with(model: @post, local: true) do |form| %>
+  <div class="post_content">
+    <%= form.label :とぅぶやく %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit :TwoEatする %>
+<% end %>
+
+<br>
+<%= link_to 'TwoEat一覧', posts_path %>
