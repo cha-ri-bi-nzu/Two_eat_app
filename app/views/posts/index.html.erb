@@ -12,7 +12,7 @@
       <td><%= post.content %></td>
       <td><%= link_to '開く', post_path(post.id) %></td>
       <td><%= link_to '書き直し', edit_post_path(post.id) %></td>
-      <td><%= link_to '消す', post_path(post.id), method: :delete %></td>
+      <td><%= link_to '消す', post_path(post.id), method: :delete, data: { confirm: 'ホントに消して大丈夫？' } %></td>
     </tr>
   <% end %>
 </table>
