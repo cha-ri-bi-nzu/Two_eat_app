@@ -1,21 +1,28 @@
-<h1>TwoEat一覧</h1>
+<header>
+  <h1>TwoEat</h1>
+</header>
 
-<p><%= notice %></p>
+<body>
+  <h2>TwoEat一覧</h2>
+  <p><%= notice %></p>
 
-<table>
-  <tr>
-    <th>皆のTwoEat</th>
-  </tr>
-
-  <% @posts.each do |post| %>
+  <table>
     <tr>
-      <td><%= post.content %></td>
-      <td><%= link_to '開く', post_path(post.id) %></td>
-      <td><%= link_to '書き直し', edit_post_path(post.id) %></td>
-      <td><%= link_to '消す', post_path(post.id), method: :delete, data: { confirm: 'ホントに消して大丈夫？' } %></td>
+      <th>皆のTwoEat</th>
     </tr>
-  <% end %>
-</table>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.content %></td>
+        <td><%= link_to '開く', post_path(post.id) %></td>
+        <td><%= link_to '書き直し', edit_post_path(post.id) %></td>
+        <td><%= link_to '消す', post_path(post.id), method: :delete, data: { confirm: 'ホントに消して大丈夫？' } %></td>
+      </tr>
+    <% end %>
+  </table>
 
-<br>
-<%= link_to 'とぅぶやく', new_post_path %>
+  <br>
+  <%= link_to 'とぅぶやく', new_post_path %>
+</body>
+<footer>
+  <h6><%= link_to "TwoEat", posts_path %></h6>
+</footer>
