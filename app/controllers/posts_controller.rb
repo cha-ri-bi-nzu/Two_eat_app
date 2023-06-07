@@ -10,8 +10,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    redirect_to new_post_path
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path, notice:"とぅぶやいた(´▽｀)"
+    else
+      render :new
+    end
   end
 
   def show
@@ -22,7 +26,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to posts_path
+      redirect_to posts_path, notice:"更新できたよ(`･ω･´)b"
     else
       render :edit
     end
@@ -30,7 +34,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to posts_path, notice:"消せたよ👌"
   end
 
   private
