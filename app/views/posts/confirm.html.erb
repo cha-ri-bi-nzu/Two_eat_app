@@ -1,0 +1,16 @@
+<header>
+  <h1>TwoEat</h1>
+</header>
+
+<h3>投稿していい？</h3>
+
+<%= form_with(model: @post, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <p>とぅぶやき内容:<%= @post.content %></p>
+  <%= form.submit "オッケー🙆" %>
+  <%= form.submit "書き直す！", name: 'back' %>
+<% end %>
+
+<footer>
+  <h6><%= link_to "TwoEat", posts_path %></h6>
+</footer>
