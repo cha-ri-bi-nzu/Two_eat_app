@@ -1,5 +1,16 @@
 <%= form_with(model: @post, local: true) do |form| %>
-  <div class="post_content">
+  <% if @post.errors.any? %>
+    <div id = "error_explanation">
+      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class = "post_content">
     <%= form.label :とぅぶやく %>
     <%= form.text_field :content %>
   </div>
@@ -7,4 +18,4 @@
 <% end %>
 
 <br>
-<%= link_to 'TwoEat一覧', posts_path %>
+<%= link_to "TwoEat一覧", posts_path %>
